@@ -43,17 +43,17 @@ const subCategorySchema = new Schema<ISubcategory>({
 
 export interface IProductImage {
     _id?: mongoose.Types.ObjectId;
-    productId: mongoose.Types.ObjectId;
+    // productId: mongoose.Types.ObjectId;
     url: string;
     altText?: string;
     position: number;
 }
 const productImageSchema = new Schema<IProductImage>({
-    productId: {
-        type: Schema.Types.ObjectId,
-        ref: 'Product',
-        required: true,
-    },
+    // productId: {
+    //     type: Schema.Types.ObjectId,
+    //     ref: 'Product',
+    //     required: true,
+    // },
     url: { type: String, required: true },
     altText: { type: String },
     position: { type: Number, default: 0 }
