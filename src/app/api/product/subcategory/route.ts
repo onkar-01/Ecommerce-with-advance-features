@@ -1,6 +1,6 @@
 import { Subcategory } from "@/models/Product";
 import { NextResponse } from "next/server";
-import { connectToDB } from "../../../../../lib/ConnectDB";
+import { connectToDB } from "../../../../lib/ConnectDB";
 
 export async function GET() {
     try {
