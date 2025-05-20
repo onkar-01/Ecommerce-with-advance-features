@@ -1,6 +1,6 @@
 import { Category } from "@/models/Product";
 import { NextRequest, NextResponse } from "next/server";
-import { connectToDB } from "../../../../../../lib/ConnectDB";
+import { connectToDB } from "../../../../../lib/ConnectDB";
 interface IProps{
     params:Promise<{id:string}>
 }

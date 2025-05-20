@@ -2,7 +2,7 @@
 
 import { Category } from "@/models/Product";
 import { NextRequest, NextResponse } from "next/server";
-import { connectToDB } from "../../../../../../lib/ConnectDB";
+import { connectToDB } from "../../../../../lib/ConnectDB";
 
 export async function POST(req: NextRequest) {
     try {

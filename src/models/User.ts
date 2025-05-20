@@ -9,6 +9,9 @@ export interface IUser {
     _id?: mongoose.Types.ObjectId;
     createdAt?: Date,
     updatedAt?: Date,
+    mobile?:string,
+    address?:string,
+    isVerified:boolean,
 }
 
 const userSchema = new Schema<IUser>({
@@ -30,6 +33,17 @@ const userSchema = new Schema<IUser>({
         required:true,
         default:'User'
     },
+    mobile:{
+        type:String,
+        unique:true
+    },
+    address:{
+        type:String,
+    },
+    isVerified:{
+        type:Boolean,
+        default:false
+    }
 },{
     timestamps:true
 });

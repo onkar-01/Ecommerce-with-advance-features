@@ -1,6 +1,6 @@
 // import { Product } from "@/models/Product";
 import { NextRequest, NextResponse } from "next/server";
-import { connectToDB } from "../../../../../lib/ConnectDB";
+import { connectToDB } from "../../../../lib/ConnectDB";
 import { Product } from "@/models/Product";
 
 
