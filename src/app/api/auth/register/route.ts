@@ -22,6 +22,7 @@ export async function POST(request: NextRequest) {
             });
         }
         const user = await User.create({ name, email, password });
+        console.log(user);
         return NextResponse.json({
             message: "User is created successfully",
             user: user
