@@ -8,7 +8,7 @@ export const authOptions: NextAuthOptions = {
     providers: [
         Credentials({
             credentials: {
-                email: { label: "Email", type: "text", placeholder: "email" },
+                email: { label: "Email", type: "text", placeholder: "Email" },
                 password: { label: "Password", type: "password" }
             },
             async authorize(credentials) {
@@ -21,9 +21,8 @@ export const authOptions: NextAuthOptions = {
                     if (!user) {
                         throw new Error("User not found with this email")
                     }
-                    const isPasswordCorrect = await bcrypt.compare(user.password, credentials?.password);
-                    if (!isPasswordCorrect) {
-                        throw new Error("Password is not correct")
+                    if(!await bcrypt.compare(credentials.password, user.password)) {
+                        throw new Error('Invalid Password');
                     }
                     if (!user.isVerified) {
                         throw new Error("User is not verified")
@@ -54,8 +53,6 @@ export const authOptions: NextAuthOptions = {
             if (session.user) {
                 session.user.id = token.id as string;
                 session.user.role = token.role as string;
-                session.user.mobile = token.mobile as string;
-                session.user.address = token.address as string;
                 session.user.email = token.email as string;
                 session.user.name = token.name as string;
             }
