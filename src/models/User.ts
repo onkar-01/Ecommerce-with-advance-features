@@ -6,7 +6,7 @@ export interface IUser {
     email:string,
     password:string,
     role:'User'|'Admin',
-    _id?: mongoose.Types.ObjectId;
+    _id: mongoose.Types.ObjectId;
     createdAt?: Date,
     updatedAt?: Date,
     mobile?:string,
